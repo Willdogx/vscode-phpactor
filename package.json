@@ -18,7 +18,8 @@
         "prepare": "yarn clean && yarn build"
     },
     "activationEvents": [
-        "onLanguage:php"
+        "onLanguage:php",
+        "onLanguage:feature"
     ],
     "contributes": {
         "commands": [
@@ -37,6 +38,10 @@
             {
                 "command": "phpactor.status",
                 "title": "Phpactor: Show Phpactor's status"
+            },
+            {
+                "command": "phpactor.class_new",
+                "title": "Phpactor: create a new php class"
             }
         ],
         "configuration": {
@@ -58,6 +63,14 @@
                     "description": "standard phpactor configuration"
                 }
             }
+        },
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "phpactor.class_new",
+                    "group": "phpactor"
+                }
+            ]
         }
     },
     "icon": "images/logo.png",
